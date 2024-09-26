@@ -54,7 +54,7 @@ public:
 	}
 	//method
 	void display() {
-		cout << "ID : " << id << endl;
+		cout << "\nID : " << id << endl;
 		cout << "Name : " << name << endl;
 		cout << "Password : " << password << endl;
 	}

@@ -27,7 +27,7 @@ public:
 	double getBalance() {
 		return balance;
 	}
-	void deposit(int amount)
+	void deposit(double amount)
 	{
 		if(amount>0)
 		{
@@ -57,4 +57,6 @@ public:
 		cout << "Balance : " << balance << endl;
 	}
 };
+static vector < Client > clients;
+
 		

@@ -40,3 +40,4 @@ public:
 
 
 };
+static vector < Admin > admins;

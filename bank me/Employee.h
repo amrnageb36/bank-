@@ -38,3 +38,4 @@ public:
     }
 
 };
+static vector < Employee > employees;
