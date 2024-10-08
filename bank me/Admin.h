@@ -8,36 +8,40 @@
 #include "Employee.h"
 using namespace std;
 
-class Admin :public Person
+
+class Admin :public Employee
 {
 private:
 	double salary = 0.0;
 public:
-	Admin() :Person()
+	Admin() :Employee()
 	{
 		salary = 0;
 	}
-	Admin(int id, string name, string password, double salary) :Person(id, name, password) {
-		setSalary(salary);
-
+	Admin(int id, string name, string password, double salary) :Employee(id, name, password,salary) {
 	}
-	void setSalary(double salary) {
-		if (Validation::validateSalary(salary))
-			this->salary = salary;
-		else cout << "Invalid salary\n";
+	
+	void addEmployee(Employee& employee) {
+		employees.push_back(employee);
 	}
-	double get_salary()
-	{
-		return salary;
+	Employee searchEmployee(int id) {
+		for (Employee e : employees)
+			if (e.getID() == id)
+				return e;
+		throw exception("not found");
+		
 	}
-	void display()
-	{
-		Person::display();
-		cout << "salary = " << salary << endl;
+	void listEmployee() {
+		for (Employee e : employees)
+			e.display();
 	}
-
-
-
-
+	void editEmployee(int id, string name, string password, double salary) {
+		for (Employee e : employees)
+			if (e.getID() == id) {
+				e.setName(name);
+				e.setPassword(password);
+				e.setSalary(salary);
+			}
+	}
 };
 static vector < Admin > admins;

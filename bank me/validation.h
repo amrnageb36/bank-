@@ -50,4 +50,71 @@ public:
 		}
 		return true;
 	}
+
+	static string enterName() {
+		string name;
+		system("cls");
+		cout << "Enter name\n";
+		cin >> name;
+		while (!validatename(name))
+		{
+			system("cls");
+			cout << "invalid name\n";
+			cout << "name must be alphabetic and min size is 5 and max size is 20\n";
+			cout << "ente name\n";
+			cin >> name;
+		}
+		return name;
+	}
+
+	static string enterPassword() {
+		string pass;
+		system("cls");
+		cout << "Enter pass\n";
+		cin >> pass;
+		while (!validatepassword(pass))
+		{
+			system("cls");
+			cout << "invalid password\n";
+			cout << "min password size is 8 and max is 20" << endl;
+			cout << "ente password\n";
+			cin >> pass;
+		}
+		return pass;
+	}
+
+	static double enterBalance() {
+		double balance;
+		system("cls");
+		cout << "Enter balance\n";
+		cin >> balance;
+		while (!validateBalance(balance))
+		{
+			system("cls");
+			cout << "invalid balance\n";
+			cout << "balance must be at least 1500" << endl;
+			cout << "ente balance\n";
+			cin >> balance;
+		}
+		return balance;
+	}
+
+	static double enterSalary() {
+		double salary;
+		system("cls");
+		cout << "Enter salary\n";
+		cin >> salary;
+		while (!validateSalary(salary))
+		{
+			system("cls");
+			cout << "invalid salary\n";
+			cout << "balance must be at least 5000" << endl;
+			cout << "enter salary\n";
+			cin >> salary;
+		}
+		return salary;
+	}
+
+
+
 };

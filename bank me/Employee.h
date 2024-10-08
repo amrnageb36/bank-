@@ -36,6 +36,29 @@ public:
         Person::display();
         cout << "salary = " << salary << endl;
     }
+    void addClient(Client& client) {
+        clients.push_back(client);
+    }
+    Client* searchClient(int id) {
+        for (Client& c : clients)
+            if (c.getID() == id)
+                return& c;
+        return nullptr;
+    }
+    void listClient() {
+        for (Client c : clients) {
+            c.display();
+            cout << "\n--------------------------------";
+        }
+    }
+    void editClient(int id, string name, string password, double balance) {
+        for (Client c : clients)
+            if (c.getID() == id) {
+                c.setName(name);
+                c.setPassword(password);
+                c.setBalance(balance);
+            }
+    }
 
 };
 static vector < Employee > employees;
